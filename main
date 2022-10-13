@@ -1,0 +1,42 @@
+from tkinter import *
+
+# Cream o functie pentru buton(am facut ultima data asta, nu prima data)
+# In functie am calculat direct transformarea din miles in km!
+def miles_to_km():
+    miles = float(miles_input.get())
+    km = round(miles * 1.609)
+    km_result_label.config(text=f"{km}")
+
+# Cream un window:
+window = Tk()
+window.title("Miles to Km Convertor")
+window.minsize(width=350, height=200)
+window.config(pady=20, padx=20)
+
+# Cream un entry:
+miles_input = Entry(width=15)
+miles_input.grid(column=1, row=0)
+
+# Cream label-uri si le pozitionam:
+miles_label = Label(text="Miles", font=("Times New Roman", 15))
+miles_label.grid(column=2, row=0)
+miles_label.config(pady=10, padx=10)
+#
+is_equal_label = Label(text="is equal to", font=("Times New Roman", 15))
+is_equal_label.grid(column=0, row=1)
+is_equal_label.config(pady=10, padx=10)
+
+km_result_label = Label(text="0", font=("Times New Roman", 15))
+km_result_label.grid(column=1, row=1)
+km_result_label.config(pady=10, padx=10)
+
+km_label = Label(text="Km", font=("Times New Roman", 15))
+km_label.grid(column=2, row=1)
+km_label.config(pady=10, padx=10)
+#
+# # Cream un button:
+calculate_button = Button(text="Calculate", command=miles_to_km)
+calculate_button.grid(column=1, row=2)
+
+
+window.mainloop()
